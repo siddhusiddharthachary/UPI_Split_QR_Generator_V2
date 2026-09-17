@@ -3,6 +3,7 @@ from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from urllib.parse import parse_qs, urlencode, urlparse
 from decimal import Decimal, InvalidOperation, ROUND_HALF_UP
 from io import BytesIO
+import os
 import base64
 import html
 import re
@@ -10,8 +11,8 @@ import time
 import json
 import qrcode
 
-HOST = '127.0.0.1'
-PORT = 8080
+HOST = '0.0.0.0'
+PORT = int(os.environ.get('PORT', '8080'))
 MAX_CHUNK = Decimal('1999.00')
 UPI_RE = re.compile(r'^[A-Za-z0-9._-]{2,256}@[A-Za-z0-9.-]{2,64}$')
 
