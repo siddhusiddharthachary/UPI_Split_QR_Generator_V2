@@ -130,9 +130,9 @@ button {{ height: 46px; border: 0; border-radius: 10px; padding: 0 18px; font-si
   {body}
 </div>
 <script>
-if ('serviceWorker' in navigator) {
+if ('serviceWorker' in navigator) {{
   window.addEventListener('load', () => navigator.serviceWorker.register('/service-worker.js'));
-}
+}}
 </script>
 </body>
 </html>'''
